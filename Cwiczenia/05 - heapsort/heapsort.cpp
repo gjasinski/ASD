@@ -7,9 +7,25 @@ struct heap{
     int A[MAX_SIZE];
     int size;
 };
+void BuildHeap(heap *h);
+void insert(heap *h, int key);
 int main()
 {
+    int tmp[10]={17,5,20,23,-5,3,7,3,21,16};
     heap *h = new heap;
+    for (int i=0;i<10;i++)
+    {
+        h->A[i]=tmp[i];
+        cout<<tmp[i]<<" ";
+    }
+    cout<<endl;
+    h->size=10;
+    BuildHeap(h);
+    insert(h,11);
+    insert(h,111);
+    insert(h,17);
+    for(int i=0;i<h->size;i++)
+        cout<<h->A[i]<<" ";
 }
 
 int parent(int n){return (n-1)/2;}
@@ -18,6 +34,7 @@ int right(int n){return 2*n+2;}
 
 void swap(heap *h, int x, int y)
 {
+    //cout<<h->A[x]<<" "<<h->A[y]<<endl;
     int tmp=h->A[x];
     h->A[x]=h->A[y];
     h->A[y]=tmp;
@@ -28,7 +45,7 @@ void Heapify(heap *h, int i)
     if(left(i)<h->size && h->A[left(i)]>h->A[i])
         ind_max=left(i);
     else ind_max=i;
-    if(right(i)<h->size && h->A[right(i)>h->A[ind_max]])
+    if(right(i)<h->size && h->A[right(i)]>h->A[ind_max])
         ind_max=right(i);
     if(ind_max!=i)
     {
@@ -59,4 +76,9 @@ void insert(heap *h, int key)
         h->A[h->size-1]=INT_MIN;
         increasekey(h,key,h->size-1);
     }
+}
+void BuildHeap(heap *h)
+{
+    for(int i=parent(h->size-1);i>=0;i--)
+        Heapify(h,i);
 }
