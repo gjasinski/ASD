@@ -16,6 +16,8 @@ void swap(int A[], int x, int y)
     A[x]=A[y];
     A[y]=tmp;
 }
+//Dzieli tablice na elementy mniejsze i wieksze od pivota, zwrca pivot(element podzialu)
+//Wersja tworzenia podzialu wg algorytmu - Lomuto
 int partition(int A[], int l, int r)
 {
     int x=A[r];
@@ -31,6 +33,8 @@ int partition(int A[], int l, int r)
     swap(A,r,i+1);
     return i+1;
 }
+//Dzieli tablice na elementy mniejsze i wieksze od pivota, zwrca pivot(element podzialu)
+//Wersja tworzenia podzialu wg algorytmu - Hoare
 int partition_oryginal(int A[], int l, int r)
 {
     int i=l-1;
@@ -50,6 +54,7 @@ int partition_oryginal(int A[], int l, int r)
         else return j;
     }
 }
+//wersja rekurencyjna
 void quicksort(int A[], int l, int r)
 {
     if(l<r)
@@ -60,6 +65,10 @@ void quicksort(int A[], int l, int r)
         quicksort(A,q+1,r);
     }
 }
+//QS z uzyciem stosu, bez rekurencji
+//Wrzucamy na stos poczatek, koniec
+//sciagamy koniec poczatek
+//Gdy stos nie jest pusty
 void qs_bezrekurencji(int A[], int N)
 {
     stack <int> s;
