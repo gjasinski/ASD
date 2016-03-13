@@ -1,7 +1,3 @@
-;dziwny komunikat
-;"powinno byc 32 znaki"
-;sprawdzic dla poprawneo 1 arg
-;jak dziala 2 arg
 ;-----------------------------------------------------------------------------------------------
 dane1 segment
     brakargumentow          db  "Nie podano argumentow!$"
@@ -32,7 +28,7 @@ kod1 segment
         
         call wczytajargumenty
         call wypiszargumenty
-        ;call sprawdzpoprawnoscargumentow
+        call sprawdzpoprawnoscargumentow
         call wyjdzzprogramu  
      
 ;Wczytywanie argumentow        
@@ -357,17 +353,18 @@ kod1 segment
             mov ah,09h                  ; wypisanie
             int 21h 
             
-            xor dx,dx                   ; spacja
-            mov dl,20h
+            ;xor dx,dx                   ; spacja
+            ;mov dl,20h
+            ;mov ah,02h
+            ;int 21h
+            
+            ;mov es,cx                   ; wypisanie dlugosci argumentu
+            ;call dlugoscargumentu
+            ;mov dx,es
+            ;add dx,30h
+            ;int 21h 
+            
             mov ah,02h
-            int 21h
-            
-            mov es,cx                   ; wypisanie dlugosci argumentu
-            call dlugoscargumentu
-            mov dx,es
-            add dx,30h
-            int 21h 
-            
             mov dl,0dh 
             int 21h                     ; nowa linia
             mov dl,0ah
