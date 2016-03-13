@@ -207,6 +207,8 @@ kod1 segment
             pop ax
             ret
     sprawdzpoprawnoscargumentow endp
+    
+;---------------------------------------------------------------------
     sprawdzzbiorznakow proc                 ; etykieta ssz_
     ; procedura zwraca 0 w przypadku wystapienia znakow z poza zakresu 0-9,a-f
     ; zwraca 1 w przypadku wystepowania tylko i wylacznie znakow z zakresu 0-9,a-f
