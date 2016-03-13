@@ -343,6 +343,7 @@ kod1 segment
             cmp bl,00h                   ; zabezpiecznie jezeli jest 0 argumentow
             jne wya_start               ; jne - skok gdy nie rowne
             pop es
+            pop dx
             pop cx
             pop bx
             pop ax
