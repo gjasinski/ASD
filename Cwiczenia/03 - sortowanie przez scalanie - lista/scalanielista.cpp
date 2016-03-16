@@ -48,7 +48,8 @@ void nserie(node *list, node *s)
     node *ptr =list->next;
     if(ptr!=NULL and ptr->next==NULL)
     {
-        s=ptr;
+        s->next=ptr;
+        ptr->next=NULL;
         list->next=NULL;
         return;
     }
@@ -98,7 +99,6 @@ node *mergeseries(node *s1, node *s2, node *append_to)
 
 void sortnmsort(node *head)
 {
-    node *tmp=head;
     node *s1 =new node;
     s1->next=NULL;
     node *s2=new node;
@@ -108,7 +108,6 @@ void sortnmsort(node *head)
     node *end;
     end=l;
     int n;
-    node *i;
     do
     {
         n=0;
