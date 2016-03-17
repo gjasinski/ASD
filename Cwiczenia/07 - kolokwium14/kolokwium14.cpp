@@ -14,7 +14,8 @@ void sortString(string A[], int n);
 
 int main()
 {
-    /*srand(time(NULL));
+    //Zadanie 2
+    srand(time(NULL));
     Node *head=new Node;
     TwoLists *tl;
     Node *tmp, *i;
@@ -40,7 +41,8 @@ int main()
         cout<<i->val<<" ";
         i=i->next;
     }
-    */
+    //zadanie 3
+    cout<<endl<<endl<<endl;
     string str[10]={"agh", "asd","krakow","wiedzmin","blackout","testowo","grafika","g","dziewiec","wiet"};
     sortString(str,10);
     for(int i=0;i<10;i++) cout<<str[i]<<endl;
@@ -107,7 +109,7 @@ void sortString(string A[], int n)
     }
     tail->next=NULL;
     int x;
-    for(int i=max_len-1;i>=max_len-1;i--)
+    for(int i=max_len-1;i>=0;i--)
     //int i=max_len-1;
     {
         while(list->next!=NULL)
@@ -136,6 +138,8 @@ void sortString(string A[], int n)
             {
                 tail->next=B[i]->next;
                 tail=C[i];
+                B[i]->next=NULL;
+                C[i]=B[i];
             }
         }
         tail->next=NULL;
