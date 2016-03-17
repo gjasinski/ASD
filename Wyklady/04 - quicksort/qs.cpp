@@ -1,14 +1,22 @@
 #include <iostream>
 #include <stack>
+#include<stdio.h>
+#include<stdlib.h>
+
 using namespace std;
 void quicksort(int A[], int l, int r);
 void qs_bezrekurencji(int A[], int N);
 int main()
 {
-    int A[10]={17,5,20,23,-5,3,7,3,21,16};
-    //quicksort(A,0,9);
-    qs_bezrekurencji(A,10);
-    for(int i=0;i<10;i++) cout<<A[i]<<" ";
+    int A[100];
+    srand(time(NULL));
+    for(int i=0;i<100;i++)
+    {
+        A[i]=rand()%1000;
+    }
+    quicksort(A,0,100);
+    //qs_bezrekurencji(A,10);
+    for(int i=0;i<100;i++) cout<<A[i]<<" ";
 }
 void swap(int A[], int x, int y)
 {
