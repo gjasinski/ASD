@@ -1,0 +1,30 @@
+To do:
+3. Liczby z zakresu [0-10^9-1]
+    Dane są pomiary: {k1, k2, ..., kn}
+            k1: {1, 7, 30 10^9-1}
+            .
+            .
+            .
+            kn{2,5,4}
+        Dla kazdego pomiaru podać ile różnych liczb zawiera.
+4. Dany jest ciag A={a1, a2, ..., an}. Znaleźć lidera ciągu(Lider wystepuje w ciagu ponad polowe razy).
+6. Mamy tablice A n elementową, z liczb R. Co najwyzej log n różnych liczb jest w tablicy.
+    Posortować.
+
+7.3.2016
+1. Zaimplementowac operacje na drzewie BST:
+    - znajdz min/max
+    - znajdz nastepnika/poprzednika dla danego wezla
+    - wstawianie do drzewa BST
+2. Stworzyć drzewo BST:
+    - znalezienie i-tego elementu co do wielkości
+    - wyznaczyc ktorym co do wielkosci jest dany wezel
+3. Mamy tablice X n-elementowa liczb R
+        Wyznaczyc tablice Y n-elementowa:
+            y[i]=1/X[i]*Iloczyn(od j=1 do n)X[j]
+4. Zaimplementowac kolejkę na dwóch stosach, push, pop.
+5. Mamy tablice n-elementowa A i liczbe k < n. Przesunac tablice A o k pozycji w miejscu.
+        A[i] => A[(i+k)%n]
+6. Mamy n dzieci, każde dziecko ma n klocków pewnej wysokości. Piersze dziecko jest złe
+    i zabiera innym dzieciom klocki. Podaj najmniejsza liczbe klockow jaka dzicko musi
+    zabrac by miało najwyzsza wieze.

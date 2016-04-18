@@ -56,12 +56,7 @@ int merge(int A[], int B[], int p, int s, int q)
         k++;
     }
 
-    for(int i=0;i<10;i++)
-    {
-        cout<<B[i]<<" ";
-
-    }cout<<endl;
-j=p;
+    j=p;
     k=0;
     while(j<=q)
     {

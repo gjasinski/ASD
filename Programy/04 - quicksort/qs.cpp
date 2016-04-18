@@ -67,8 +67,9 @@ void quicksort(int A[], int l, int r)
 {
     if(l<r)
     {
-        //int q=partition(A,l,r);
-        int q=partition_oryginal(A,l,r);
+        int q=partition(A,l,r);
+        //int q=partition_oryginal(A,l,r);
+        //quicksort(A,l,q);dla partition_original
         quicksort(A,l,q-1);
         quicksort(A,q+1,r);
     }
