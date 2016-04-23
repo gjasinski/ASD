@@ -15,6 +15,7 @@ BSTNode* bstSuccessor(BSTNode* proot);
 void bstRemoveNode(BSTNode* proot);
 BSTNode* bstFindAndRemove(BSTNode* proot, int val);
 void bstRemoveNodeCormen(BSTNode* &proot, int val);
+void insertRecursive(BSTNode* &proot, int key);
 
 int main()
 {
@@ -31,6 +32,7 @@ int main()
     proot=add(proot, 3);
     proot=add(proot, 4);
     proot=add(proot, 1);
+
     inOrder(proot);
     ptr=proot->left->right;
     cout<<endl<<ptr->key<<endl;
@@ -40,7 +42,16 @@ int main()
     cout<<endl;
     inOrder(proot);
 
-
+    cout<<endl;
+    ptr=NULL;
+    insertRecursive(ptr, 10);
+    insertRecursive(ptr, 15);
+    insertRecursive(ptr, 16);
+    insertRecursive(ptr, 14);
+    insertRecursive(ptr, 13);
+    insertRecursive(ptr, 5);
+    insertRecursive(ptr, 6);
+    inOrder(ptr);
 }
 
 //Insert node to tree
@@ -61,6 +72,32 @@ BSTNode* add(BSTNode* proot, int key){
     ptr->parent=parent;
     return root;
 }
+
+void insertRec(BSTNode* proot, BSTNode* parent, int key){
+    if(proot==NULL){
+        BSTNode* ptr=new BSTNode;
+        ptr->left=ptr->right=NULL;
+        ptr->key=key;
+        if(parent->key>key) parent->left=ptr;
+                else parent->right=ptr;
+        ptr->parent=parent;
+        return;
+    }
+    if(proot->key>key)insertRec(proot->left, proot, key);
+        else insertRec(proot->right, proot, key);
+}
+
+void insertRecursive(BSTNode* &proot, int key){
+    if(!proot){
+        proot=new BSTNode;
+        proot->key=key;
+        proot->parent=proot->left=proot->right=NULL;
+        return;
+    }
+    if(proot->key>key) insertRec(proot->left, proot, key);
+        else insertRec(proot->right, proot, key);
+}
+
 
 //Find node
 BSTNode* bstFind(BSTNode* proot, int val){
