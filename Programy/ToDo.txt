@@ -8,8 +8,9 @@ To do:
             kn{2,5,4}
         Dla kazdego pomiaru podać ile różnych liczb zawiera.
 4. Dany jest ciag A={a1, a2, ..., an}. Znaleźć lidera ciągu(Lider wystepuje w ciagu ponad polowe razy).
-6. Mamy tablice A n elementową, z liczb R. Co najwyzej log n różnych liczb jest w tablicy.
-    Posortować.
+6. Mamy tablice A n elementową, z liczb R. Co najwyzej log n różnych liczb jest w tablicy.    Posortować.
+7. Tablica n-elementowa przesuanc o k pozycji w miejscu i=)i+k)%n
+
 
 7.3.2016
 2. Stworzyć drzewo BST:
