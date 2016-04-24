@@ -16,6 +16,8 @@ void bstRemoveNode(BSTNode* proot);
 BSTNode* bstFindAndRemove(BSTNode* proot, int val);
 void bstRemoveNodeCormen(BSTNode* &proot, int val);
 void insertRecursive(BSTNode* &proot, int key);
+int bstSumConstMemory(BSTNode* proot);
+int bstSumRecursive(BSTNode* proot);
 
 int main()
 {
@@ -52,7 +54,11 @@ int main()
     insertRecursive(ptr, 5);
     insertRecursive(ptr, 6);
     inOrder(ptr);
+    cout<<endl<<bstSumConstMemory(proot)<<" Recursive: "<<bstSumRecursive(proot);
+    cout<<endl<<bstSumConstMemory(ptr)<<" Recursive: "<<bstSumRecursive(ptr);
+
 }
+
 
 //Insert node to tree
 BSTNode* add(BSTNode* proot, int key){
@@ -221,4 +227,56 @@ void bstRemoveNodeCormen(BSTNode* &proot, int val){
         y->right=node->right;
     }
     delete node;
+}
+
+
+/*
+5. Struct Node{
+	node* left,* right;
+	int value;
+	}
+Zsumowac wartosci drzewa bez uzycia dodatkowej pamieci(bez rekurencji)
+Algorytm:
+Mamy drzewo:  ojciec P
+                wezel A
+    dzieci  X           Y
+1. Krok przychodzmy z P idziemy do X
+    wezel       A
+    dzieci  Y       P
+2. Krok przychodzimy z X idziemy do Y
+    wezel       A
+    dzieci  P       X
+3. Krok przychodzimy z Y wracamy do P
+    wezel       A
+    dzieci X        Y
+4, MAGIC!
+Nalezy podzielic wynik przez trzy poniewaz kazy wezel jest 3 razy zliczany
+*/
+int bstSumConstMemory(BSTNode* proot){
+    BSTNode* node;
+    BSTNode* parent=NULL;
+    BSTNode* next=proot;
+    int count=0;
+    int countRoot=0;
+    while(countRoot<3){
+        node=next;
+        if(node==proot) countRoot++;
+        if(node){
+            count+=node->key;
+            next=node->left;
+            node->left=node->right;
+            node->right=parent;
+            parent=node;
+        }
+        else{
+            next=parent;
+            parent=NULL;
+        }
+    }
+    return count/3;
+}
+
+int bstSumRecursive(BSTNode* proot){
+    if(proot) return bstSumRecursive(proot->left) + proot->key + bstSumRecursive(proot->right);
+    return 0;
 }
