@@ -8,17 +8,11 @@ To do:
             kn{2,5,4}
         Dla kazdego pomiaru podać ile różnych liczb zawiera.
 4. Dany jest ciag A={a1, a2, ..., an}. Znaleźć lidera ciągu(Lider wystepuje w ciagu ponad polowe razy).
-6. Mamy tablice A n elementową, z liczb R. Co najwyzej log n różnych liczb jest w tablicy.
-    Posortować.
+6. Mamy tablice A n elementową, z liczb R. Co najwyzej log n różnych liczb jest w tablicy.    Posortować.
+7. Tablica n-elementowa przesuanc o k pozycji w miejscu i=(i+k)%n
+
 
 7.3.2016
-2. Stworzyć drzewo BST:
-    - znalezienie i-tego elementu co do wielkości
-    - wyznaczyc ktorym co do wielkosci jest dany wezel
-3. Mamy tablice X n-elementowa liczb R
-        Wyznaczyc tablice Y n-elementowa:
-            y[i]=1/X[i]*Iloczyn(od j=1 do n)X[j]
-4. Zaimplementowac kolejkę na dwóch stosach, push, pop.
 5. Mamy tablice n-elementowa A i liczbe k < n. Przesunac tablice A o k pozycji w miejscu.
         A[i] => A[(i+k)%n]
 6. Mamy n dzieci, każde dziecko ma n klocków pewnej wysokości. Piersze dziecko jest złe
@@ -29,11 +23,6 @@ To do:
 1. Wstawianie do skip listy
 2. usuwanie z skip listy
 
-5. Struct Node{
-	node* left,* right;
-	int value;
-	}
-Zsumowac wartosci drzewa bez uzycia dodatkowej pamieci(bez rekurencji)
 6. Omowic jak mozna wykonac operacje mnozenia zbiorow dla:
 	-skiplist
 	-tablic hashujacych
@@ -72,5 +61,15 @@ tablica haszujaca na lisce(adresowanie otware)(cormen 258/12.1-3
 
 //---
 (cormen 244/11.2-8)
+
+
+/-----------
+25.04.2016
+BFS
+DFS
+Sortowanie topologiczne
+Znajdowanie silnych spojnych skladowych
+sciezka krytyczna
+ddfs(??? innaczej sie nazywa, polaczenie bfs, dfs)
 
 
