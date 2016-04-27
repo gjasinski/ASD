@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
 struct BSTNode{
@@ -18,6 +19,7 @@ void bstRemoveNodeCormen(BSTNode* &proot, int val);
 void insertRecursive(BSTNode* &proot, int key);
 int bstSumConstMemory(BSTNode* proot);
 int bstSumRecursive(BSTNode* proot);
+void print(BSTNode* node);
 
 int main()
 {
@@ -34,7 +36,7 @@ int main()
     proot=add(proot, 3);
     proot=add(proot, 4);
     proot=add(proot, 1);
-
+    print(proot);
     inOrder(proot);
     ptr=proot->left->right;
     cout<<endl<<ptr->key<<endl;
@@ -59,6 +61,35 @@ int main()
 
 }
 
+void print(BSTNode* node){
+    cout<<"#------PRINT TREE"<<endl;
+    int counter=1;
+    int tmpCounter;
+    BSTNode* ptr;
+    queue<BSTNode*> listOfNodes;
+    listOfNodes.push(node);
+    while(counter>0){
+        tmpCounter=0;
+        while(counter>0){
+            ptr=listOfNodes.front();
+            listOfNodes.pop();
+            if(ptr->left){
+                listOfNodes.push(ptr->left);
+                tmpCounter++;
+            }
+            if(ptr->right){
+                listOfNodes.push(ptr->right);
+                tmpCounter++;
+            }
+            cout<<ptr->key<<" ";
+            counter--;
+        }
+        counter=tmpCounter;
+        cout<<endl;
+    }
+    cout<<"#------PRINT TREE"<<endl;
+
+}
 
 //Insert node to tree
 BSTNode* add(BSTNode* proot, int key){
