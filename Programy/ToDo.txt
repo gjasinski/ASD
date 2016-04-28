@@ -66,5 +66,7 @@ Sortowanie topologiczne
 Znajdowanie silnych spojnych skladowych
 sciezka krytyczna
 ddfs(??? innaczej sie nazywa, polaczenie bfs, dfs)
+avl
+rbt
 
 

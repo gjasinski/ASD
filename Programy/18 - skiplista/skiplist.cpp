@@ -37,7 +37,7 @@ int main(){
     insertNodeToSkipList(SL, 50, maxLevel);
     ptr=findElement(SL, 50, maxLevel);
     if(ptr) cout<<ptr->val<<endl; else cout<<"ERR"<<endl;
-    removeElement(SL, 50, maxLevel);
+    removeElement(SL, 50, maxLevel);ptr=NULL;
     ptr=findElement(SL, 50, maxLevel);
     if(ptr) cout<<ptr->val<<endl; else cout<<"ERR"<<endl;
     printSkipList(SL, maxLevel);
@@ -46,7 +46,7 @@ int main(){
 int findLevel(int maxLevel){
     int modulo=pow(2,maxLevel)-1;
     int result=rand()%modulo+1;
-    result=maxLevel-(int)(log(result)/log(2))-1;
+    result=maxLevel-(int)(log(result)/log(2));
     return result;
 }
 
@@ -110,10 +110,11 @@ void removeElement(SkipList &sl, int element, int maxLevel){
     ptr=sl.first->next[0];
     while(ptr->val<element)
         ptr=ptr->next[0];
-    if(ptr->val==element)
+    if(ptr->val==element){
         prev->next[0]=ptr->next[0];
-    delete [] ptr->next;
-    delete ptr;
+        delete [] ptr->next;
+        delete ptr;
+    }
 }
 void printSkipList(SkipList SL, int maxLevel){
     SLNode* ptr;

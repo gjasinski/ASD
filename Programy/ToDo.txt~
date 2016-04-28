@@ -9,12 +9,9 @@ To do:
         Dla kazdego pomiaru podać ile różnych liczb zawiera.
 4. Dany jest ciag A={a1, a2, ..., an}. Znaleźć lidera ciągu(Lider wystepuje w ciagu ponad polowe razy).
 6. Mamy tablice A n elementową, z liczb R. Co najwyzej log n różnych liczb jest w tablicy.    Posortować.
-7. Tablica n-elementowa przesuanc o k pozycji w miejscu i=(i+k)%n
 
 
 7.3.2016
-5. Mamy tablice n-elementowa A i liczbe k < n. Przesunac tablice A o k pozycji w miejscu.
-        A[i] => A[(i+k)%n]
 6. Mamy n dzieci, każde dziecko ma n klocków pewnej wysokości. Piersze dziecko jest złe
     i zabiera innym dzieciom klocki. Podaj najmniejsza liczbe klockow jaka dzicko musi
     zabrac by miało najwyzsza wieze.
