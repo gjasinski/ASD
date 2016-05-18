@@ -18,3 +18,4 @@ A i B sa w jednej skladowej spojej to losujemy mniejsza liczbe, jezeli nie sa w 
 skladowej spojej to losujemy wieksza liczbe. Dzilamy do zmniejszajac przedzial do momentu
 osiagniecia przedzialu o rozmiarze 1.
 */
+
