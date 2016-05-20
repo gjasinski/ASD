@@ -65,6 +65,7 @@ node* findSet2(node* x){
     if(x->parent!=x){
         node* y=findSet(x->parent);
         x->parent=y;
+        return y;
     }else
         return x;
 }
