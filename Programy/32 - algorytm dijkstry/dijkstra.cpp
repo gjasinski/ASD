@@ -1,6 +1,6 @@
 /*
     Solution for https://www.hackerrank.com/challenges/dijkstrashortreach
-    Passed 5/7 test cases
+    Passed 5/7 test cases, list solution passed 7/7
 */
 #include <cstdio>
 #include <climits>
