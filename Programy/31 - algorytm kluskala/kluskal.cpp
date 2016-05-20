@@ -1,16 +1,11 @@
+/*
+    Solution for https://www.hackerrank.com/challenges/kruskalmstrsub
+    Find MST.
+*/
 #include <cmath>
 #include <cstdio>
-#include <vector>
-#include <iostream>
-#include <algorithm>
 using namespace std;
 
-/*
-struct edge{
-    int x, y, w;
-    edge* p;
-    int rank;
-};*/
 
 struct Vertex{
     int id, rank;
@@ -22,15 +17,18 @@ struct Edge{
     Vertex* v1,* v2;
 };
 
+
 void bSort(Edge** e, int n);
 Vertex* makeSet(int v);
 bool diffrentSets(Vertex* v1, Vertex* v2);
 void unionVertices(Vertex* v1, Vertex* v2);
+int kluskal(Edge** e, int N , int M);
 
 int main() {
+    //Read graph
     int N, M, x, y, r, S;
     scanf("%d %d", &N, &M);
-    N++; // warunek zadania: wiercholki numerowane od 1
+    N++; // Vertices from 1..n
     Edge** e = new Edge*[M];
     Vertex** v = new Vertex*[N];
     for(int i=0;i<N;i++)v[i]=NULL;
@@ -43,6 +41,12 @@ int main() {
         e[i]->v2=v[y];
         e[i]->weight=r;
     }
+    printf("%d", kluskal(e, N, M));
+    return 0;
+}
+
+//Finds MST.
+int kluskal(Edge** e, int N , int M){
     bSort(e, M);
     int counter=1;
     int i=0;
@@ -55,8 +59,7 @@ int main() {
         }
         i++;
     }
-    printf("%d",weight);
-    return 0;
+    return weight;
 }
 
 Vertex* makeSet(int v){
