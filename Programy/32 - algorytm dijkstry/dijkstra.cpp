@@ -1,6 +1,7 @@
 /*
     Solution for https://www.hackerrank.com/challenges/dijkstrashortreach
     Passed 5/7 test cases
+*/
 #include <cstdio>
 #include <climits>
 using namespace std;
@@ -28,7 +29,7 @@ int main() {
             scanf("%d %d %d", &x, &y, &r);
             x--;
             y--;
-            if(A[x][y]>r || A[x][y]==-1){// for duplicat edges
+            if(A[x][y]>r || A[x][y]==-1){// for duplicate edges
                 A[x][y]=r;
                 A[y][x]=r;
             }
