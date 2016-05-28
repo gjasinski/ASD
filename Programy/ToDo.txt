@@ -60,13 +60,16 @@ tablica haszujaca na lisce(adresowanie otware)(cormen 258/12.1-3
 
 /-----------
 25.04.2016
-BFS
-DFS
-Sortowanie topologiczne
 Znajdowanie silnych spojnych skladowych
 sciezka krytyczna
 ddfs(??? innaczej sie nazywa, polaczenie bfs, dfs)
-avl
-rbt
+relaksacja
+cykl eulera
+cykl hamiltona
+(sciezki)
+mosty w grafie nieskierowanym
+punkty artykulacji(graf nieskierowany)
+Floyd
+
 
 
