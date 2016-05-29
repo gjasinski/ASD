@@ -29,6 +29,7 @@ struct Comp{
 
 void dijkstra(Vertex* G, int n, int s);
 void printShortestPathes(Vertex* G, int n, int S);
+void printPath(Vertex* G, int s, int v);
 
 int main() {
     int T,N, M, x, y, r, S;
@@ -40,7 +41,7 @@ int main() {
         for(int i=0;i<N;i++) A[i]=new int[N];
         for(int i=0;i<N;i++)
             for(int j=0;j<N;j++)A[i][j]=-1;
-            
+
         //read data;
         for(int i=0;i<M;i++){
             scanf("%d %d %d", &x, &y, &r);
@@ -51,7 +52,7 @@ int main() {
                 A[y][x]=r;
             }
         }
-        
+
         //convert data from matrix to lists
         for(int i=0;i<N;i++){
             int c=0;
@@ -74,6 +75,7 @@ int main() {
         S--;
         dijkstra(v, N, S);
         printShortestPathes(v, N, S);
+        printPath(v,0,3);
         delete v;
     }
     return 0;
@@ -108,7 +110,7 @@ void dijkstra(Vertex* G, int n, int s){
                 pq.push(node);
             }
         }
-        
+
     }
 }
 
@@ -119,4 +121,13 @@ void printShortestPathes(Vertex* G, int n, int S){
             else printf("%d ", G[i].d);
     }
     printf("\n");
+}
+
+void printPath(Vertex* G, int s, int v){
+    if(s==v) printf("%d ", v);
+    else{
+        if(G[v].parent==-1) printf("Nie ma sciezki");
+        printPath(G,s,G[v].parent);
+        printf("%d ", v);
+    }
 }
