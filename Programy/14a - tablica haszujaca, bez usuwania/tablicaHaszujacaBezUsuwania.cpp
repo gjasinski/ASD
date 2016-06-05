@@ -115,7 +115,7 @@ bool eq(Data* a, Data* b){
 }
 
 //znajduje dane w tablicy hashujacej
-Data* find(Data* A[], Data* data, int size){
+Data* find(Data* A, Data* data, int size){
     int start=(int)abs(hashConstMultiplier(data))%size;
     if(!A[start]) return NULL;
     if(eq(A[start], data)) return A[start];
