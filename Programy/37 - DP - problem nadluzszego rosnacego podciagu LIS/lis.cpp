@@ -76,6 +76,7 @@ int lis_nlogn(int* A, int n){
     auxTable[0]=ptr;
 
     for(int i=1;i<n;i++){
+    //Solution is correct, but it is complicated.
         int j=bsearch(auxTable, 0,length-1, A[i]);
         if(auxTable[j].val>A[i]) auxTable[j].val=A[i];  //Case1 - decrease value
         else{
