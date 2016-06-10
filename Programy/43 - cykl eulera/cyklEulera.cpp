@@ -31,6 +31,7 @@ bool eulerCircuits(bool** G, int n){
             if(G[v][i]){
                 s.push(v);
                 G[v][i]=false;
+                v=1;
                 break;
             }
         }
