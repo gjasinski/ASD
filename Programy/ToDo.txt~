@@ -64,9 +64,6 @@ Znajdowanie silnych spojnych skladowych
 sciezka krytyczna
 ddfs(??? innaczej sie nazywa, polaczenie bfs, dfs)
 relaksacja
-cykl eulera
-cykl hamiltona
-(sciezki)
 mosty w grafie nieskierowanym
 punkty artykulacji(graf nieskierowany)
 Floyd

@@ -37,13 +37,8 @@ int stronglyConnectedComponents(bool** G, int n){
     for(int i=0; i<n;i++) GT[i]= new bool[n];
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
-            GT[i][j]=0;
-        }
-    }
-
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            if(G[i][j]) GT[j][i]=true;;
+            if(G[i][j]) GT[j][i]=true;
+            else GT[j][i]=false;
         }
     }
     int count=0;
@@ -51,7 +46,6 @@ int stronglyConnectedComponents(bool** G, int n){
     stack <int> stmp;
     for(int i=0; i<n; i++) visited[i]=false;
     while(!s.empty()){
-
         tmp=s.top();
         s.pop();
         if(!visited[tmp]){

@@ -6,6 +6,7 @@
 using namespace std;
 void quicksort(int A[], int l, int r);
 void qs_bezrekurencji(int A[], int N);
+
 int main()
 {
     int A[100];
@@ -18,15 +19,17 @@ int main()
     //qs_bezrekurencji(A,10);
     for(int i=0;i<100;i++) cout<<A[i]<<" ";
 }
+
 void swap(int A[], int x, int y)
 {
     int tmp=A[x];
     A[x]=A[y];
     A[y]=tmp;
 }
+
 //Dzieli tablice na elementy mniejsze i wieksze od pivota, zwrca pivot(element podzialu)
 //Wersja tworzenia podzialu wg algorytmu - Lomuto
-int partition(int A[], int l, int r)
+int partitionLomuto(int A[], int l, int r)
 {
     int x=A[r];
     int i=l-1;
@@ -41,9 +44,10 @@ int partition(int A[], int l, int r)
     swap(A,r,i+1);
     return i+1;
 }
+
 //Dzieli tablice na elementy mniejsze i wieksze od pivota, zwrca pivot(element podzialu)
 //Wersja tworzenia podzialu wg algorytmu - Hoare
-int partition_oryginal(int A[], int l, int r)
+int partitionHoare(int A[], int l, int r)
 {
     int i=l-1;
     int j=r+1;
@@ -62,18 +66,19 @@ int partition_oryginal(int A[], int l, int r)
         else return j;
     }
 }
-//wersja rekurencyjna
+
 void quicksort(int A[], int l, int r)
 {
     if(l<r)
     {
-        int q=partition(A,l,r);
-        //int q=partition_oryginal(A,l,r);
-        //quicksort(A,l,q);dla partition_original
+        int q=partitionLomuto(A,l,r);
+        //int q=partitionHoare(A,l,r);
+        //quicksort(A,l,q);dla partitionHoare
         quicksort(A,l,q-1);
         quicksort(A,q+1,r);
     }
 }
+
 //QS z uzyciem stosu, bez rekurencji
 //Wrzucamy na stos poczatek, koniec
 //sciagamy koniec poczatek
@@ -90,7 +95,7 @@ void qs_bezrekurencji(int A[], int N)
         s.pop();
         l=s.top();
         s.pop();
-        q=partition_oryginal(A,l,r);
+        q=partitionHoare(A,l,r);
         if(l<q)
         {
             s.push(l);
