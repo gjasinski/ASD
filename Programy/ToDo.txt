@@ -27,19 +27,7 @@ To do:
 1.Obliczyc zlozonosc wykonania operacji Find po wykonaniu operacji union na strukture zbiorow rozlacznych z kompresja sciezki, laczenie wg. rangi.
 2. Mamy dana strukture ziorow rozlacznych z laczeniem rangi bez kompresji.
 Pokazac przyklad w ktorym po n operacjach UNION zlozonosc n operacji FIND bedzie nlogn
-3. Mamy dana siec miast polaczona n liniami autobusowymi.
-z miasta, do miasta, pojemnosc autobusu
-a1, b1, v1
-.
-.
-.
-an, bn, vn
 
-ai<n
-ai!=bi
-bi<n
-Grupa k turystow podzielic na najmniejsza ilosc grup p.
-Znalesc podzial k  turystow na p grup tak ze kazda z grup moze pzrejechac z miasta 0 do n-1 siecia autobusow bez dzielenia sie.
 
 
 
