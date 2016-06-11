@@ -73,7 +73,7 @@ void quicksort(int A[], int l, int r)
     {
         int q=partitionLomuto(A,l,r);
         //int q=partitionHoare(A,l,r);
-        //quicksort(A,l,q);dla partitionHoare
+        //quicksort(A,l,q);//dla partitionHoare
         quicksort(A,l,q-1);
         quicksort(A,q+1,r);
     }
